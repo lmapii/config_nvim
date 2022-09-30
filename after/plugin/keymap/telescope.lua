@@ -1,4 +1,3 @@
-require('telescope').load_extension('fzf')
 
 local Remap = require("core.keymap")
 local nnoremap = Remap.nnoremap
@@ -18,6 +17,8 @@ nnoremap("<leader>fb", function() require('telescope.builtin').buffers()    end)
 nnoremap("<leader>fh", function() require('telescope.builtin').help_tags()  end)
 nnoremap("<leader>fs", function() require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})  end)
 nnoremap("<leader>fw", function() require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>")})     end)
+
+require('telescope').load_extension('fzf')
 
 -- nnoremap("<leader>ps", function()
 --     require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})

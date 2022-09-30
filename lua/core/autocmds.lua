@@ -79,3 +79,9 @@ autocmd('BufLeave', {
 --   pattern = 'fzf',
 --   command = 'set laststatus=2 showmode ruler'
 -- })
+
+-- deprecated: use autocmd
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "json",
+-- 	command = "setlocal shiftwidth=2 tabstop=2"
+-- })

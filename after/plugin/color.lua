@@ -22,3 +22,7 @@ require("tokyonight").setup({
 vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme solarized]])
+
+-- adapt the code completion plugin to the color scheme
+vim.api.nvim_set_hl(0, 'CocErrorSign', {fg='#d1666a'})
+vim.api.nvim_set_hl(0, 'CocInlayHint', {fg='#333333', bg='#000000'})

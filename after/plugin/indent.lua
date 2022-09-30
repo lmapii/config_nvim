@@ -1,5 +1,6 @@
 
-vim.cmd [[highlight BlankColor guifg=#333333 gui=nocombine]]
+-- style the indent lines (they use BlankColor)
+vim.api.nvim_set_hl(0, 'BlankColor', {fg='#333333'})
 
 require("indent_blankline").setup {
     char_highlight_list = {

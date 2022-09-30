@@ -96,3 +96,8 @@ opt.formatoptions = "tcrqnb"
 
 -- Leader key is space instead of always having to type ":"
 g.mapleader = " "
+
+-- TODO: check to disable normal plugins
+-- https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua
+-- TODO: add ALE and have it work nicely with coc
+-- https://github.com/dense-analysis/ale#faq-coc-nvim

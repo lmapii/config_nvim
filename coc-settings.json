@@ -1,0 +1,8 @@
+{
+  "suggest.noselect": false,
+  "suggest.enablePreselect": false,
+  "coc.preferences.formatOnSaveFiletypes": ["json", "python"],
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.enable": false
+}
