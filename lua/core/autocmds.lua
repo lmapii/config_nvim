@@ -85,3 +85,10 @@ autocmd('BufLeave', {
 -- 	pattern = "json",
 -- 	command = "setlocal shiftwidth=2 tabstop=2"
 -- })
+
+-- TODO: No autocomplete in empty buffers
+-- TODO: No autocomplete in comments
+-- vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
+-- 	pattern = "/tmp/mutt*",
+-- 	command = "let b:coc_enabled = 0"
+-- })

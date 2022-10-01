@@ -104,6 +104,16 @@ _G.packer_plugins = {
     path = "/Users/martin/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  melange = {
+    loaded = true,
+    path = "/Users/martin/.local/share/nvim/site/pack/packer/start/melange",
+    url = "https://github.com/savq/melange"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/martin/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/NvChad/nvim-colorizer.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/martin/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -143,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/martin/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/Users/martin/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

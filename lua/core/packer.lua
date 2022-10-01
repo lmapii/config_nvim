@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'shaunsingh/solarized.nvim'
+  use 'savq/melange'
+  use 'Mofiqul/vscode.nvim'
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
   -- Fuzzy finder with telescope, notice that changing telescope-fzf-native.nvim requires a rebuild (see 1006)
@@ -32,7 +34,8 @@ return require('packer').startup(function(use)
   -- Treelines for code
   use 'nvim-treesitter/nvim-treesitter'
   use 'ThePrimeagen/vim-be-good'
+  -- color codes to color
+  use 'NvChad/nvim-colorizer.lua'
 end)
 
--- TODO: swap coc for
--- TODO: swap for nvim-cmp !
+-- TODO: check nvim-cmp vs. coc

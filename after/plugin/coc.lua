@@ -1,5 +1,8 @@
 -- see also https://gist.github.com/akrawiel/c631c0542278854fd7de90b17ef116c5
 -- the following are the default settings straight from the plugin docs
+-- TODO: add ALE and have it work nicely with coc
+-- https://github.com/dense-analysis/ale#faq-coc-nvim
+-- https://www.reddit.com/r/vim/comments/e87nn1/whats_your_setup_for_rust_development/
 
 local keyset = vim.keymap.set
 -- Auto complete
@@ -131,7 +134,6 @@ keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', o
 -- Requires 'textDocument/selectionRange' support of language server.
 keyset("n", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
 keyset("x", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
-
 
 -- Add `:Format` command to format current buffer.
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})

@@ -29,4 +29,10 @@ nnoremap("<down>", "<nop>")
 nnoremap("<left>", "<nop>")
 nnoremap("<right>", "<nop>")
 
+-- Jump to start and end of line using the home row keys
+nnoremap("H", "^")
+vnoremap("H", "^")
+nnoremap("L", "$")
+vnoremap("L", "$")
+
 -- TODO: https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/

@@ -7,7 +7,17 @@ vim.opt.background = "dark"
 require("gruvbox").setup({
     contrast = "hard",
     transparent_mode = true,
+    palette_overrides = {
+      bright_red = "#AF7F0A",
+      bright_orange = "#F4883F",
+      neutral_red = "#B7490A",
+      faded_red = "#9F371A",
+      faded_orange = "#E5711E",
+    }
   })
+
+-- https://github.com/norcalli/nvim-colorizer.lua
+require("colorizer").setup()
 
 -- https://github.com/folke/tokyonight.nvim
 require("tokyonight").setup({
@@ -19,9 +29,28 @@ require("tokyonight").setup({
     }
   })
 
-vim.cmd([[colorscheme gruvbox]])
+-- https://github.com/Mofiqul/vscode.nvim
+require('vscode').setup({
+  transparent = true,
+  italic_comments = false,
+  disable_nvimtree_bg = true,
+  -- Override colors (see ./lua/vscode/colors.lua)
+  -- color_overrides = {
+  --     vscLineNumber = '#FFFFFF',
+  -- },
+  -- Override highlight groups (see ./lua/vscode/theme.lua)
+  -- group_overrides = {
+  --     -- this supports the same val table as vim.api.nvim_set_hl
+  --     -- use colors from this colorscheme by requiring vscode.colors!
+  --     Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+  -- }
+})
+
+-- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme solarized]])
+-- vim.cmd([[colorscheme melange]])
+vim.cmd([[colorscheme vscode]])
 
 -- adapt the code completion plugin to the color scheme
 vim.api.nvim_set_hl(0, 'CocErrorSign', {fg='#d1666a'})
