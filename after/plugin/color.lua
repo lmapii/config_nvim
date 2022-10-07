@@ -50,11 +50,18 @@ require('vscode').setup({
   -- }
 })
 
+-- https://github.com/catppuccin/nvim
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+require('catppuccin').setup({
+  transparent_background = false, -- if true, disables setting the background color
+})
+
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme solarized]])
 -- vim.cmd([[colorscheme melange]])
-vim.cmd([[colorscheme vscode]])
+-- vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme catppuccin]])
 
 -- adapt the code completion plugin to the color scheme
 vim.api.nvim_set_hl(0, 'CocErrorSign', {fg='#d1666a'})

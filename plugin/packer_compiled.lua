@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  catppuccin = {
+    loaded = true,
+    path = "/Users/martin/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/Users/martin/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -168,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/martin/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
     url = "https://github.com/tpope/vim-unimpaired"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/Users/martin/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

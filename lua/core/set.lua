@@ -62,8 +62,8 @@ opt.listchars:append "eol:↓"
 
 opt.ignorecase = true       -- Ignore case letters when search
 opt.smartcase = true        -- Ignore lowercase for the whole pattern
-opt.gdefault = true
-opt.incsearch = true
+opt.gdefault = true         -- By default, substitute all occurrences
+opt.incsearch = true        -- Show a preview of the first match based on what has beeen typed thus far
 opt.hlsearch = false
 
 -- Completion
@@ -96,6 +96,15 @@ opt.formatoptions = "tcrqnb"
 
 -- Leader key is space instead of always having to type ":"
 g.mapleader = " "
+
+-- = 0: thin listing (one file per line)
+-- = 1: long listing (one file per line with time stamp information and file size)
+-- = 2: wide listing (multiple files in columns)
+-- = 3: tree style listing
+g.netrw_liststyle = 3
+g.netrw_banner = 1
+-- show line numbers in netrw
+g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 -- TODO: check to disable normal plugins
 -- https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua

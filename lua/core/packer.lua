@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
   use 'shaunsingh/solarized.nvim'
   use 'savq/melange'
   use 'Mofiqul/vscode.nvim'
+ use { 'catppuccin/nvim', as = 'catppuccin' }
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
   -- Fuzzy finder with telescope, notice that changing telescope-fzf-native.nvim requires a rebuild (see 1006)

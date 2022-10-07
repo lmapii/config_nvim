@@ -61,10 +61,11 @@ onoremap("L", "$")
 -- vnoremap("<C-l>", "<C-w>l")
 
 -- Resize with arrows
-nnoremap("<C-Up>", ":resize -2<CR>")
-nnoremap("<C-Down>", ":resize +2<CR>")
-nnoremap("<C-Left>", ":vertical resize -2<CR>")
-nnoremap("<C-Right>", ":vertical resize +2<CR>")
+-- Does not work on macos unless desktop switching is changed
+-- nnoremap("<C-Up>", ":resize -2<CR>")
+-- nnoremap("<C-Down>", ":resize +2<CR>")
+-- nnoremap("<C-Left>", ":vertical resize -2<CR>")
+-- nnoremap("<C-Right>", ":vertical resize +2<CR>")
 
 -- Visual Block --
 -- Move text up and down
