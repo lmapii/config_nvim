@@ -33,9 +33,29 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   -- Treelines for code
   use 'nvim-treesitter/nvim-treesitter'
+  -- A little VIM trainer/game
   use 'ThePrimeagen/vim-be-good'
   -- color codes to color
   use 'NvChad/nvim-colorizer.lua'
+  -- visual git integration
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release',
+  }
+  -- tpope!
+  use 'tpope/vim-unimpaired'
+  -- highlight todos, etc.
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  }
 end)
 
--- TODO: check nvim-cmp vs. coc
+-- TODO: check nvim-cmp vs. coc, vim-rooter
+-- https://github.com/terrortylor/nvim-comment
+-- https://github.com/kyazdani42/nvim-tree.lua
+-- https://github.com/tpope/vim-commentary
+-- https://github.com/tpope/vim-abolish
+-- https://github.com/nvim-pack/nvim-spectre
+-- https://github.com/tpope/vim-surround
+-- https://github.com/tpope/vim-fugitive

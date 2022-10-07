@@ -20,5 +20,6 @@ M.nnoremap = bind("n") -- normal mode only
 M.vnoremap = bind("v") -- visual mode and select
 M.xnoremap = bind("x") -- visual mode only
 M.inoremap = bind("i") -- insert
+M.onoremap = bind("o") -- operator-pending
 
 return M

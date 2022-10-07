@@ -21,7 +21,7 @@ autocmd('BufWritePre', {
   command = ":%s/\\s\\+$//e"
 })
 
--- -- Don't auto commenting new lines
+-- -- Don't auto comment new lines
 -- autocmd('BufEnter', {
 --   pattern = '*',
 --   command = 'set fo-=c fo-=r fo-=o'
@@ -37,11 +37,12 @@ autocmd('Filetype', {
 })
 
 -- Set indentation to 2 spaces
+-- This exists in addition to the ftplugin files which override these settings
 augroup('setIndent', { clear = true })
 autocmd('Filetype', {
   group = 'setIndent',
   pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript',
-    'yaml', 'lua'
+    'yaml', 'lua', 'json'
   },
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
@@ -78,12 +79,6 @@ autocmd('BufLeave', {
 -- autocmd('BufLeave', {
 --   pattern = 'fzf',
 --   command = 'set laststatus=2 showmode ruler'
--- })
-
--- deprecated: use autocmd
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = "json",
--- 	command = "setlocal shiftwidth=2 tabstop=2"
 -- })
 
 -- TODO: No autocomplete in empty buffers

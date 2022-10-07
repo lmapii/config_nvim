@@ -26,6 +26,7 @@ opt.backspace = 'indent,eol,start' -- Backspace over newlines
 opt.splitright = true              -- Vertical split to the right
 opt.splitbelow = true              -- Horizontal split to the bottom
 opt.laststatus = 3                 -- Set global statusline (always and ONLY the last)
+-- opt.laststatus = 2                 -- Set global statusline (always and all windows)
 -- opt.showmode = false               -- Hide Insert/Replace/Visual mode display
 opt.showcmd = true                 -- Show (partial) command in status line.
 opt.shortmess:append { c = true }  -- Don't give |ins-completion-menu| messages.
@@ -50,7 +51,6 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
-opt.wrap = false
 
 -- Show hidden characters
 -- Verbose: opt.listchars = nbsp:¬,eol:¶,extends:»,precedes:«,trail:•

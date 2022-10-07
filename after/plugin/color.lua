@@ -17,7 +17,11 @@ require("gruvbox").setup({
   })
 
 -- https://github.com/norcalli/nvim-colorizer.lua
-require("colorizer").setup()
+require("colorizer").setup({
+  user_default_options = {
+    names = false -- "Name" codes like Blue or blue
+  }
+})
 
 -- https://github.com/folke/tokyonight.nvim
 require("tokyonight").setup({

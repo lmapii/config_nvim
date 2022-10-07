@@ -39,3 +39,15 @@ require('telescope').load_extension('fzf')
 -- nnoremap("<leader>vh", function()
 --     require('telescope.builtin').help_tags()
 -- end)
+
+-- For when you need to change your nvim config fast.
+function SearchDotfiles()
+    builtin.find_files({
+        prompt_title = "Dotfiles",
+        theme = themes.get_dropdown{},
+        cwd = "~/.config",
+        search_dirs = { "nvim" }
+    })
+end
+
+vim.keymap.set("n", "<leader><leader>d", SearchDotfiles, { silent = true });
