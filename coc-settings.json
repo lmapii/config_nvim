@@ -1,14 +1,12 @@
 {
   "suggest.noselect": false,
   "suggest.enablePreselect": false,
-  "coc.preferences.formatOnSaveFiletypes": ["json", "python", "rust"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "python",
+    "rust"
+  ],
   "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   "rust-analyzer.inlayHints.chainingHints.enable": true,
-  "rust-analyzer.inlayHints.enable": true,
-  "languageserver": {
-    "lua": {
-      "command": "lua-lsp",
-      "filetypes": ["lua"]
-    }
-  }
+  "rust-analyzer.inlayHints.enable": true
 }

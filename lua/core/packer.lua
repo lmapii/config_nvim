@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   use 'shaunsingh/solarized.nvim'
   use 'savq/melange'
   use 'Mofiqul/vscode.nvim'
- use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'catppuccin/nvim', as = 'catppuccin' }
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
   -- Fuzzy finder with telescope, notice that changing telescope-fzf-native.nvim requires a rebuild (see 1006)
@@ -45,6 +45,10 @@ return require('packer').startup(function(use)
   }
   -- tpope!
   use 'tpope/vim-unimpaired'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-abolish'
+  use 'tpope/vim-commentary'
   -- highlight todos, etc.
   use {
     "folke/todo-comments.nvim",
@@ -55,8 +59,5 @@ end)
 -- TODO: check nvim-cmp vs. coc, vim-rooter
 -- https://github.com/terrortylor/nvim-comment
 -- https://github.com/kyazdani42/nvim-tree.lua
--- https://github.com/tpope/vim-commentary
--- https://github.com/tpope/vim-abolish
 -- https://github.com/nvim-pack/nvim-spectre
--- https://github.com/tpope/vim-surround
 -- https://github.com/tpope/vim-fugitive

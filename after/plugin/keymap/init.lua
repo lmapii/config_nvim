@@ -85,3 +85,27 @@ nnoremap("[b", ":bprevious<CR>")
 nnoremap("]b", ":bnext<CR>")
 nnoremap("[B", ":bfirst<CR>")
 nnoremap("]B", ":blast<CR>")
+
+-- https://github.com/nelstrom/vim-visual-star-search
+-- re-write attempt in lua
+function _G.set_search(arg)
+   -- https://github.com/nanotee/nvim-lua-guide#using-vimscript-from-lua
+   local tmp = vim.fn.getreg("s")
+   -- repeat the current election and yank it into register s
+   vim.cmd([[norm! gv"sy]])
+   -- https://neovim.io/doc/user/builtin.html#builtin-function-list
+   local esc = vim.fn.escape(vim.fn.getreg("s"), arg .. '\\')
+   esc = vim.fn.substitute(esc, '\n', '\\n', 'g')
+   vim.fn.setreg("/", "\\V" .. esc)
+   vim.fn.setreg("s", tmp)
+end
+
+-- https://vi.stackexchange.com/questions/9751/understanding-ctrl-u-combination
+-- vim.keymap.set("x", "*", ':<C-u>lua _G.set_search("/")<CR>/<C-R>=@/<CR><CR>', {silent = true})
+-- vim.keymap.set("x", "#", ':<C-u>lua _G.set_search("?")<CR>?<C-R>=@/<CR><CR>', {silent = true})
+
+-- instead of already executing the search, simply preload the "/" register
+-- this allows to use "//e" or "?" without a pattern since it is already in the register
+vim.keymap.set("x", "*", ':<C-u>lua _G.set_search("/")<CR>', {silent = true})
+vim.keymap.set("x", "#", ':<C-u>lua _G.set_search("?")<CR>', {silent = true})
+
