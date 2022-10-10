@@ -51,7 +51,7 @@ require('vscode').setup({
 })
 
 -- https://github.com/catppuccin/nvim
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 require('catppuccin').setup({
   transparent_background = false, -- if true, disables setting the background color
 })

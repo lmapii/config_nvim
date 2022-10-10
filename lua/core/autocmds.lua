@@ -54,20 +54,20 @@ autocmd('Filetype', {
 -- })
 
 -- Enter insert mode when switching to terminal
-autocmd('TermOpen', {
-  command = 'setlocal listchars= nonumber norelativenumber nocursorline',
-})
+-- autocmd('TermOpen', {
+--   command = 'setlocal listchars= nonumber norelativenumber nocursorline',
+-- })
 
-autocmd('TermOpen', {
-  pattern = '*',
-  command = 'startinsert'
-})
+-- autocmd('TermOpen', {
+--   pattern = '*',
+--   command = 'startinsert'
+-- })
 
--- Close terminal buffer on process exit
-autocmd('BufLeave', {
-  pattern = 'term://*',
-  command = 'stopinsert'
-})
+-- -- Close terminal buffer on process exit
+-- autocmd('BufLeave', {
+--   pattern = 'term://*',
+--   command = 'stopinsert'
+-- })
 
 -- Hide the statusline for fuzzy search with fzf
 -- https://github.com/junegunn/fzf/blob/master/README-VIM.md#hide-statusline

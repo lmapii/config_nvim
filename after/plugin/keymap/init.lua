@@ -49,10 +49,11 @@ onoremap("L", "$")
 
 -- There is a subtle difference between <Esc> and <C-c>, see :h i_CTRL-C
 -- or https://vi.stackexchange.com/questions/25764/use-control-c-instead-of-escape-key
--- nnoremap("<C-c>", "<Esc>")
--- vnoremap("<C-c>", "<Esc>")
--- xnoremap("<C-c>", "<Esc>")
--- inoremap("<C-c>", "<Esc>")
+-- but this is a bad idea since you cannot quit the "q:" buffer anymore
+nnoremap("<C-c>", "<Esc>")
+vnoremap("<C-c>", "<Esc>")
+xnoremap("<C-c>", "<Esc>")
+inoremap("<C-c>", "<Esc>")
 
 -- Better window navigation
 -- nnoremap("<C-h>", "<C-w>h")
@@ -88,7 +89,7 @@ nnoremap("]B", ":blast<CR>")
 
 -- https://github.com/nelstrom/vim-visual-star-search
 -- re-write attempt in lua
-function _G.set_search(arg)
+function _G.set_search(arg, g)
    -- https://github.com/nanotee/nvim-lua-guide#using-vimscript-from-lua
    local tmp = vim.fn.getreg("s")
    -- repeat the current election and yank it into register s
@@ -96,8 +97,17 @@ function _G.set_search(arg)
    -- https://neovim.io/doc/user/builtin.html#builtin-function-list
    local esc = vim.fn.escape(vim.fn.getreg("s"), arg .. '\\')
    esc = vim.fn.substitute(esc, '\n', '\\n', 'g')
+   if g then
+     esc = "\\<" .. esc .. "\\>"
+   end
    vim.fn.setreg("/", "\\V" .. esc)
-   vim.fn.setreg("s", tmp)
+   -- instead of restoring the yanked value, keep it for :substitute
+   -- but then again instead of substitute use `cgn`
+   -- definition of `gn`:
+   -- search forward for the last searched pattern and start visual mode to select the match,
+   -- if an operator is pending, this operates on the match (allowing dot to repeat the action)
+   -- vim.fn.setreg("s", tmp)
+   vim.cmd([[set hls]])
 end
 
 -- https://vi.stackexchange.com/questions/9751/understanding-ctrl-u-combination
@@ -106,6 +116,10 @@ end
 
 -- instead of already executing the search, simply preload the "/" register
 -- this allows to use "//e" or "?" without a pattern since it is already in the register
-vim.keymap.set("x", "*", ':<C-u>lua _G.set_search("/")<CR>', {silent = true})
-vim.keymap.set("x", "#", ':<C-u>lua _G.set_search("?")<CR>', {silent = true})
+vim.keymap.set("x", "*",  ':<C-u>lua _G.set_search("/", false)<CR>', {silent = true})
+vim.keymap.set("x", "g*", ':<C-u>lua _G.set_search("/", true )<CR>', {silent = true})
+vim.keymap.set("x", "#",  ':<C-u>lua _G.set_search("?", false)<CR>', {silent = true})
+vim.keymap.set("x", "g#", ':<C-u>lua _G.set_search("?", true )<CR>', {silent = true})
 
+-- Unset search highlight
+vim.keymap.set("n", "<CR>", ":noh<CR><CR>")
