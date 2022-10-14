@@ -27,7 +27,7 @@ autocmd('BufWritePre', {
 --   command = 'set fo-=c fo-=r fo-=o'
 -- })
 
--- Settings for filetypes:
+-- Common settings for filetypes:
 -- Disable line length marker
 augroup('setLineLength', { clear = true })
 autocmd('Filetype', {
@@ -47,28 +47,6 @@ autocmd('Filetype', {
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
 
--- -- Terminal settings:
--- -- Open a Terminal on the right tab
--- autocmd('CmdlineEnter', {
---   command = 'command! Term :botright vsplit term://$SHELL'
--- })
-
--- Enter insert mode when switching to terminal
--- autocmd('TermOpen', {
---   command = 'setlocal listchars= nonumber norelativenumber nocursorline',
--- })
-
--- autocmd('TermOpen', {
---   pattern = '*',
---   command = 'startinsert'
--- })
-
--- -- Close terminal buffer on process exit
--- autocmd('BufLeave', {
---   pattern = 'term://*',
---   command = 'stopinsert'
--- })
-
 -- Hide the statusline for fuzzy search with fzf
 -- https://github.com/junegunn/fzf/blob/master/README-VIM.md#hide-statusline
 -- let g:fzf_layout = { 'down': '30%' }
@@ -81,9 +59,3 @@ autocmd('Filetype', {
 --   command = 'set laststatus=2 showmode ruler'
 -- })
 
--- TODO: No autocomplete in empty buffers
--- TODO: No autocomplete in comments
--- vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
--- 	pattern = "/tmp/mutt*",
--- 	command = "let b:coc_enabled = 0"
--- })

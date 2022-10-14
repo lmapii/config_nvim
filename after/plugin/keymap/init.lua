@@ -50,6 +50,7 @@ onoremap("L", "$")
 -- There is a subtle difference between <Esc> and <C-c>, see :h i_CTRL-C
 -- or https://vi.stackexchange.com/questions/25764/use-control-c-instead-of-escape-key
 -- but this is a bad idea since you cannot quit the "q:" buffer anymore
+-- TODO: https://github.com/folke/todo-comments.nvim/issues/140
 nnoremap("<C-c>", "<Esc>")
 vnoremap("<C-c>", "<Esc>")
 xnoremap("<C-c>", "<Esc>")
